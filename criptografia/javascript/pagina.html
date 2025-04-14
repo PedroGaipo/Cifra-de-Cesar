@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+            <script>
+                function criptografar() {
+                    const alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    let mensagemfinal = ""
+                    let mensagem = document.getElementById("mensagem").value
+                    for(i = 0; i < mensagem.length ; i++)
+                    {
+                        if(alfabeto.indexOf(mensagem[i]) !== -1)
+                        {
+                            x = alfabeto.indexOf(mensagem[i])
+                            y = alfabeto[Math.abs((x + 3) % alfabeto.length)]
+                            mensagemfinal += y
+                        }
+                        else
+                        {
+                            mensagemfinal += mensagem[i]
+                        }
+                    }
+                    document.getElementById("mensagemfinal").innerHTML = mensagem + " = " + mensagemfinal
+                }
+                function descriptografar() {
+                    const alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    let mensagemfinal = ""
+                    let mensagem = document.getElementById("mensagem").value
+                    for(i = 0; i < mensagem.length ; i++)
+                    {
+                        if(alfabeto.indexOf(mensagem[i]) !== -1)
+                        {
+                            x = alfabeto.indexOf(mensagem[i])
+                            y = alfabeto[Math.abs((x - 3) % alfabeto.length)]
+                            mensagemfinal += y
+                        }
+                        else
+                        {
+                            mensagemfinal += mensagem[i]
+                        }
+                    }
+                    document.getElementById("mensagemfinal").innerHTML = mensagem + " = " + mensagemfinal
+                }
+            </script>    
+            <style>
+                body {
+                    text-align: center;
+                    background-color: #303030;
+                    margin: 0 auto;
+                    padding: 20px;
+                    border-radius: 5px;
+                    width: 600px;
+                    background-color: #3d4043;
+                    color: white;
+                    text-shadow: 2px 2px 4px #000000;
+                }
+                h1 {
+                    font-size: 5em;
+                    color: #ffffff;
+                    text-shadow: 2px 2px 4px #000000;
+                    text-align: center;
+                    font-family: 'Times New Roman', Times, serif, sans-serif;
+                }
+                button
+                {                    
+                    font-size: 2em;
+                    font-family: 'Times New Roman', Times, serif, sans-serif;
+                    cursor: pointer;
+                    display: inline-block;
+                    margin: 2%;
+                    border: 0;
+                    width: 600px;
+                    height: 60px;
+                    text-shadow: 6px 6px 12px #313131;
+                }
+                #td {
+                    margin-top: 20px;
+                    font-family: 'Times New Roman', Times, serif, sans-serif;
+                    font-size: 2em;
+                    color: #ffffff;
+                    text-shadow: 2px 2px 4px #000000;
+                    text-align: center;
+                    display: inline-block;
+                    margin: 0.5em;
+                    border: 0;
+                    
+                }
+            </style>    
+    <title>Cifra de César</title>
+    <head>                
+        <h1>Cifra de César</h1>       
+    </head>
+        <body>
+
+                <table>
+                    <tr>
+                        <td>Digite uma frase</td>
+                        <td><input type="text" id="mensagem" size="48"></td>
+                    </tr>
+                    
+                </table>
+                <button onclick="criptografar()">Criptografar</button>
+                <button onclick="descriptografar()">Descriptografar</button>
+                <div id="mensagemfinal">Sua mensagem é:</div>
+        </body>
+
+</html>

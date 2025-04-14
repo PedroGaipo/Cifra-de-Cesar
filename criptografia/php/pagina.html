@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cifra de César com PHP</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #303030;
+            color: white;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        input, button {
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px;
+        }
+        #resultado {
+            font-size: 1.5em;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #444;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cifra de César com PHP</h1>
+    
+    <form method="post">
+        <label>Digite uma mensagem:</label><br>
+        <input type="text" name="message" required>
+        <br>
+        <label>Escolha o deslocamento:</label><br>
+        <input type="number" name="shift" value="3" required>
+        <br>
+        <button type="submit" name="action" value="encrypt">Criptografar</button>
+        <button type="submit" name="action" value="decrypt">Descriptografar</button>
+    </form>
